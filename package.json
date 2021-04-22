@@ -1,0 +1,15 @@
+{
+  "name": "blockchain-voting",
+  "version": "1.0.0",
+  "description": "A blockchain project for voting.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd frontend && npm start\" \"cd backend && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rakshit Singh",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.0.2"
+  }
+}
