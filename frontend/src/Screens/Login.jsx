@@ -5,7 +5,7 @@ import { Button, TextField, Typography } from '@material-ui/core'
 
 function Login() {
     return (
-		<Container style={{textAlign: 'center'}}>
+		<div className="d-flex flex-column justify-content-center align-items-center" style={{height: '100vh'}}>
 			<Typography  variant="h2" >
 				Blockchain Voting App
 			</Typography>
@@ -27,7 +27,7 @@ function Login() {
 			<Button style={{margin: 10}} variant="outlined" color="secondary">
 				Register
 			</Button>
-		</Container>
+		</div>
     )
 }
 
