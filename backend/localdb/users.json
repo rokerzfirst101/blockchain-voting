@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "name": "Rakshit Singh",
+      "adhaar": "18021180059",
+      "publicKey": "04335ef25a449f8406cfbcc16b5b4c4e741501c6adb16007ce1893359a383b0948479197939eef0e9a281b7e9e36579bddba2a71fb5aa486539808c4ed2be14c00",
+      "privateKey": "9bea793137e166599d3a95dd3ee3e5fa7f43cbff73bb44cdc9f146fcadb294f7",
+      "password": "$2b$05$bZS/k.qz6skhlh3DcPFtFuqvzZ2zMKvDsPeWnSP9jyyxITrQ8NgxC",
+      "id": "EC0001",
+      "balance": 1
+    },
+    {
+      "name": "Rakshit Singh",
+      "adhaar": "18021180059",
+      "publicKey": "04f4aa4bbf8e99dab6c1296c9593c4ace15686b6b75d2184041e67f1ba736df630ebd9c3f37260bcbd5ee3fa541cf6d3339d1ef92140317c0627d443b9b328f4ab",
+      "privateKey": "aa9539150d070925e87982c5282b7f76707a210892893358372470160dcd330e",
+      "password": "$2b$05$NAx3oJfTZnxCL7uKoQQ28ObbRCk9.pWXOJUYRYCFEpvzUgJAmp.FW",
+      "id": "EC0002",
+      "balance": 1
+    }
+  ],
+  "count": 2
+}

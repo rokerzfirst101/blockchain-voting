@@ -1,6 +1,6 @@
 const SHA256 = require('crypto-js/sha256')
 class Block {
-    constructor(timestamp, transactions, previousHash = '') {
+    constructor(timestamp, transactions, previousHash = 'Genesis Block') {
         this.previousHash = previousHash;
         this.timestamp = timestamp;
         this.transactions = transactions;
@@ -24,4 +24,15 @@ class Block {
             this.nonce
         ).toString();
     }
+
+    hasValidTransactions(){
+        for (const tx of this.transactions){
+            if(!tx.isValid()){
+                return false;
+            }
+        }
+        return true;
+    }
 }
+
+module.exports = Block

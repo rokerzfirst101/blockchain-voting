@@ -1,3 +1,5 @@
+const Block = require('./Block');
+const Transaction = require('./Transaction');
 class Blockchain {
     constructor() {
         this.chain = [this.createGenesisBlock()];
@@ -15,17 +17,22 @@ class Blockchain {
         return this.chain[this.chain.length - 1];
     }
     
-    createTransaction(transaction) {
-        this.pendingTransactions.push(transaction);
+    addTransactions(transaction) {
+        if (!transaction.fromAddress || !transaction.toAddress) {
+            throw new Error('Transaction must include to and from address.')
+        }
+
+        if (!transaction.isValid()){
+            throw new Error('Cannot add invalid transaction.')
+        }
+
+        this.pendingTransactions.push(transaction)
     }
 
-    minePendingTransactions(miningRewardAddress) {
+    minePendingTransactions() {
         let block = new Block(Date.now(), this.pendingTransactions);
         block.mineBlock(this.difficulty);
         this.chain.push(block);
-        this.pendingTransactions = [
-            new Transaction(null, miningRewardAddress, this.miningReward)
-        ];
     }
 
     getBalanceOfAddress(address) {
@@ -56,7 +63,13 @@ class Blockchain {
             if (currentBlock.previousHash !== previousBlock.hash) {
                 return false;
             }
+
+            if (!currentBlock.hasValidTransactions()) {
+                return false;
+            }
         }
         return true;
     }
 }
+
+module.exports = Blockchain
